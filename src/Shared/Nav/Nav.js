@@ -44,7 +44,7 @@ const Nav = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <a className="btn rounded">Log In</a>
+                    <Link to={'/login'} className="btn rounded">Log In</Link>
                 </div>
             </div>
         </div>
