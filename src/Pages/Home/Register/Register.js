@@ -1,14 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import useTitle from '../../../Hooks/useTitle';
 
 const Register = () => {
+    //Title
+    useTitle('Register')
     return (
         <div>
-            <div className="hero min-h-screen bg-base-200" style={{ backgroundImage: `url("https://pbs.twimg.com/media/Eco6w0EUwAAPqz_.jpg:large")` }}>
+            <div className="hero min-h-screen bg-base-200 py-10" style={{ backgroundImage: `url("https://images.hdqwalls.com/wallpapers/airplane-wings.jpg")` }}>
                 <div className="hero-content ">
                     <div className="card w-full max-w-sm bg-opacity-60 shadow-2xl bg-base-100">
                         <div className="card-body px-16 ">
-                            <h1 className="text-5xl font-bold">Login now!</h1>
+                            <h1 className="text-4xl font-bold text-center mb-5">Register Now!</h1>
 
                             {/* Name */}
                             <div className="form-control">
@@ -43,9 +46,9 @@ const Register = () => {
 
                             </div>
                             <div className="form-control mt-6">
-                                <button className="btn btn-primary">Register</button>
+                                <button className="btn btn-primary rounded-xl">Register</button>
                             </div>
-                            <p>Already have an account? please <Link className='font-bold' to={'/register'}>Log In</Link></p>
+                            <p>Already have an account? please <Link className='font-bold' to={'/login'}>Log In</Link></p>
                         </div>
                     </div>
                 </div>
