@@ -5,7 +5,7 @@ import './Banner.css'
 const Banner = () => {
     return (
         <div>
-            <div className='img-gradient'>
+            <div className='img-gradient' data-aos="fade">
                 <img className='w-full ' src={bannerImg} alt="" />
                 <div className='Banner-text'>
                     <h1>Wanna get lost in the beauty of the world?</h1>

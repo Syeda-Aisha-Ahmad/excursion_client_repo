@@ -13,19 +13,19 @@ const LogIn = () => {
                                 <label className="label">
                                     <span className="label-text">Email</span>
                                 </label>
-                                <input type="text" placeholder="email" className="input input-bordered w-full" />
+                                <input type="email" placeholder="email" className="input input-bordered w-full rounded-xl" />
                             </div>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Password</span>
                                 </label>
-                                <input type="text" placeholder="password" className="input input-bordered" />
+                                <input type="password" placeholder="password" className="input input-bordered rounded-xl" />
 
                             </div>
                             <div className="form-control mt-6">
                                 <button className="btn btn-primary">Login</button>
                             </div>
-                            <p>Don't have an account? please <Link to={'/register'}>Register</Link></p>
+                            <p>Don't have an account? please <Link className='font-bold' to={'/register'}>Register</Link></p>
                         </div>
                     </div>
                 </div>

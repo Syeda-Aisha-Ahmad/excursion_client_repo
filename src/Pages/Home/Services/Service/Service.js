@@ -3,7 +3,7 @@ import React from 'react';
 const Service = () => {
     return (
         <div>
-            <div className='grid lg:grid-cols-3 grid-cols-1 w-fit mx-auto my-10 text-left'>
+            <div className='grid lg:grid-cols-3 grid-cols-1 w-fit mx-auto my-10 text-left' >
                 <div className="card w-96 bg-base-100 shadow-xl mx-5">
                     <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
                     <div className="card-body">
