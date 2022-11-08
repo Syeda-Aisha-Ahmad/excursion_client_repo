@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Nav = () => {
     return (
@@ -21,10 +22,10 @@ const Nav = () => {
                                     <li><a>Submenu 2</a></li>
                                 </ul>
                             </li>
-                            <li><a>Item 3</a></li>
+                            <li><Link to={'/blog'}>Blog</Link></li>
                         </ul>
                     </div>
-                    <a className="btn btn-ghost normal-case text-xl">Excursion </a>
+                    <Link to={'/'} className="btn btn-ghost normal-case text-xl">Excursion </Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal p-0">
@@ -39,7 +40,7 @@ const Nav = () => {
                                 <li><a>Submenu 2</a></li>
                             </ul>
                         </li>
-                        <li><a>Item 3</a></li>
+                        <li><Link to={'/blog'}>Blog</Link></li>
                     </ul>
                 </div>
                 <div className="navbar-end">
