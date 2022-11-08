@@ -26,9 +26,9 @@ const LogIn = () => {
 
                             </div>
                             <div className="form-control mt-6">
-                                <button className="btn btn-primary rounded-xl">Login</button>
+                                <button className="btn bg-blue-500 text-white border-none rounded-xl">Login</button>
                             </div>
-                            <p>Don't have an account? please <Link className='font-bold' to={'/register'}>Register</Link></p>
+                            <p>Don't have an account? please <Link className='font-bold link text-blue-700' to={'/register'}>Register</Link></p>
                         </div>
                     </div>
                 </div>

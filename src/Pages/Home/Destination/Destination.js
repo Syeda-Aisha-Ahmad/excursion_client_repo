@@ -5,9 +5,9 @@ import './Destination.css'
 
 const Destination = () => {
     return (
-        <div className=''>
+        <div className='my-20'>
             <div className='w-10/12 mx-auto'>
-                <h1 className='text-4xl text-center my-10' data-aos="fade-left">Populer Destination</h1>
+                <h1 className='text-4xl text-center my-10' data-aos="fade-left">Populer <span className='text-blue-500'>Destination</span></h1>
                 <div>
                     <div className=''>
                         {/* Bangladesh */}

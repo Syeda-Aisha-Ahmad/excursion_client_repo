@@ -14,7 +14,7 @@ const Service = () => {
                         <h2 className="card-title">Shoes!</h2>
                         <p>If a dog chews shoes whose shoes does he choose?</p>
                         <div className="card-actions justify-end">
-                            <Link to={'services/:id'}><button className="btn btn-primary">View Details</button></Link>
+                            <Link to={'services/:id'}><button className="btn bg-blue-400 border-none text-white rounded-2xl">View Details</button></Link>
                         </div>
                     </div>
                 </div>
@@ -24,7 +24,7 @@ const Service = () => {
                         <h2 className="card-title">Shoes!</h2>
                         <p>If a dog chews shoes whose shoes does he choose?</p>
                         <div className="card-actions justify-end">
-                            <button className="btn btn-primary">Buy Now</button>
+                            <button className="btn bg-blue-400 border-none text-white rounded-2xl">Buy Now</button>
                         </div>
                     </div>
                 </div>
@@ -34,7 +34,7 @@ const Service = () => {
                         <h2 className="card-title">Shoes!</h2>
                         <p>If a dog chews shoes whose shoes does he choose?</p>
                         <div className="card-actions justify-end">
-                            <button className="btn btn-primary">Buy Now</button>
+                            <button className="btn bg-blue-400 border-none text-white rounded-2xl">Buy Now</button>
                         </div>
                     </div>
                 </div>
