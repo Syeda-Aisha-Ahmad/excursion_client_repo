@@ -35,9 +35,9 @@ const ServiceDetails = () => {
                 </div>
             </section>
 
-            <section id="review-section">
+            <section id="review-section" data-aos="fade">
                 <h1 className='text-4xl my-5 text-center '> Service Reviews</h1>
-                <div className="card lg:card-side shadow-xl bg-blue-100 w-9/12 mx-auto p-5">
+                <div className="card lg:card-side shadow-xl bg-blue-100 w-9/12 mx-auto p-5 border-solid border-2 border-blue-200">
                     <figure><img alt='' className="mask mask-circle" src="https://placeimg.com/160/160/arch" /></figure>
                     <div className="card-body">
                         <h1 className='text-3xl font-bold card-title'>Service Reviews</h1>
@@ -49,6 +49,36 @@ const ServiceDetails = () => {
                         <input type="radio" name="rating-4" className="mask mask-star-2 bg-blue-500" />
                         <input type="radio" name="rating-4" className="mask mask-star-2 bg-blue-500" />
                         <input type="radio" name="rating-4" className="mask mask-star-2 bg-blue-500" />
+                    </div>
+                </div>
+
+                <div>
+                    <div className="collapse" >
+                        <input type="checkbox" className="peer" />
+                        <button className="collapse-title bg-blue-500 text-white text-center peer-checked:bg-blue-600 peer-checked:text-white font-bold text-xl px-1 my-10 w-2/12 mx-auto rounded-xl">
+                            Add Review
+                        </button>
+
+                        {/* <div className="alert shadow-lg">
+                            <div>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="stroke-info flex-shrink-0 w-6 h-6"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                <span>we use cookies for no reason.</span>
+                            </div>
+                            <div className="flex-none">
+                                <button className="btn btn-sm btn-ghost">Deny</button>
+                                <button className="btn btn-sm btn-primary">Accept</button>
+                            </div>
+                        </div> */}
+
+                        <div className="collapse-content bg-none text-primary-content peer-checked:bg-blue-100 peer-checked:text-secondary-content " >
+                            <form action="">
+                                <h3 className='text-3xl font-bold text-blue-900 my-10'>Your Review</h3>
+                                <input type="text" placeholder="Your name" className="input input-bordered w-1/2 rounded-xl mb-5" />
+                                <input type="text" placeholder="Your Email" className="input input-bordered w-1/2 rounded-xl mb-5" />
+                                <textarea className="textarea textarea-bordered w-full rounded-xl" placeholder="Review"></textarea>
+                                <button className='btn bg-blue-500 text-white border-none rounded-xl px-10'>Submit</button>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </section>
