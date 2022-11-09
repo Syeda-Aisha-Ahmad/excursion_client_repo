@@ -1,10 +1,22 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../Context/AuthProvider';
 
 const Nav = () => {
+    const { logout, user } = useContext(AuthContext);
+    // console.log(user.uid);
+
+    //LOGOUT
+    const logoutHandler = () => {
+        logout()
+            .then(() => { })
+            .catch(error => {
+
+            })
+    }
     return (
         <div>
-            <div className="navbar bg-base-100 bg-opacity-60" data-aos="fade  ">
+            <div className="navbar bg-base-100 bg-opacity-60" >
                 <div className="navbar-start">
                     <div className="dropdown">
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -22,11 +34,20 @@ const Nav = () => {
                     <ul className="menu menu-horizontal p-0">
                         <li><Link to={'/addservice'}>Add Service</Link></li>
                         <li><Link to={'/blog'}>Blog</Link></li>
-                        <li><Link to={'/reviews'}>My reviews</Link></li>
+                        <li><Link to={'/reviews'}>My reviews {user?.uid}</Link></li>
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <Link to={'/login'} className="btn bg-blue-400 border-none text-white px-10 rounded">Log In</Link>
+                    {
+                        user?.email ?
+                            <Link to={'/login'} onClick={logoutHandler} className="btn bg-blue-400 border-none text-white px-10 rounded">Log out</Link> :
+                            <Link to={'/login'} className="btn bg-blue-400 border-none text-white px-10 rounded">Log In</Link>
+
+
+                    }
+
+
+
                 </div>
             </div>
         </div >

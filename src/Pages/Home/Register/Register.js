@@ -1,10 +1,27 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../../Context/AuthProvider';
 import useTitle from '../../../Hooks/useTitle';
 
 const Register = () => {
+
+    // const { googleSignIn } = useContext(AuthContext);
+    const { googleSignIn } = useContext(AuthContext)
+
+    const googleHandler = () => {
+        googleSignIn()
+            .then((result => {
+                const user = result.user;
+                console.log(user)
+            }))
+            .catch(error => {
+                console.error(error)
+            })
+    }
+
     //Title
     useTitle('Register')
+
     return (
         <div>
             <div className="hero min-h-screen bg-base-200 py-10" style={{ backgroundImage: `url("https://images.hdqwalls.com/wallpapers/airplane-wings.jpg")` }}>
@@ -18,7 +35,7 @@ const Register = () => {
                                 <label className="label">
                                     <span className="label-text">Name</span>
                                 </label>
-                                <input type="text" placeholder="Name" className="input input-bordered w-full rounded-xl" />
+                                <input name='your-name' type="text" placeholder="Name" className="input input-bordered w-full rounded-xl" />
                             </div>
 
                             {/* Email */}
@@ -26,7 +43,7 @@ const Register = () => {
                                 <label className="label">
                                     <span className="label-text">Email</span>
                                 </label>
-                                <input type="email" placeholder="email" className="input input-bordered w-full rounded-xl" />
+                                <input name='email' type="email" placeholder="email" className="input input-bordered w-full rounded-xl" />
                             </div>
 
                             {/* Password */}
@@ -34,7 +51,7 @@ const Register = () => {
                                 <label className="label">
                                     <span className="label-text">Password</span>
                                 </label>
-                                <input type="password" placeholder="Password" className="input input-bordered w-full rounded-xl" />
+                                <input name='password' type="password" placeholder="Password" className="input input-bordered w-full rounded-xl" />
                             </div>
 
                             {/* Confirm Password */}
@@ -42,11 +59,13 @@ const Register = () => {
                                 <label className="label">
                                     <span className="label-text">Confirm Password</span>
                                 </label>
-                                <input type="password" placeholder="Confirm Password" className="input input-bordered rounded-xl" />
+                                <input name='confirm' type="password" placeholder="Confirm Password" className="input input-bordered rounded-xl" />
 
                             </div>
                             <div className="form-control mt-6">
                                 <button className="btn bg-blue-500 text-white border-none rounded-xl">Register</button>
+                                <p className='text-center text-slate-700 font-bold my-3'>or</p>
+                                <button onClick={googleHandler} className="btn btn-outline border-solid border-blue-500 text-slate-800 rounded-xl">Sign In with Google</button>
                             </div>
                             <p>Already have an account? please <Link className='font-bold link text-blue-700' to={'/login'}>Log In</Link></p>
                         </div>
