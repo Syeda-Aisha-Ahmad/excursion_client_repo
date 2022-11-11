@@ -5,18 +5,24 @@ import useTitle from '../../../Hooks/useTitle';
 
 const Register = () => {
 
-    const { googleSignIn, createUser } = useContext(AuthContext)
+    const { googleSignIn, createUser, loading } = useContext(AuthContext)
+
 
     //Register
     const registerForm = (event) => {
+        event.preventDefault();
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
         createUser(email, password)
             .then(result => {
                 const user = result.user;
-                console.log(user)
-                // form.reset()
+                console.log("user");
+                console.log(user);
+                if (loading) {
+                    <h1>Loading...</h1>
+                }
+                form.reset()
             })
             .catch(error => {
                 console.error(error)
@@ -24,16 +30,6 @@ const Register = () => {
 
 
     }
-
-    // const userCreateHandler = (email, password) => {
-    //     createUser(email, password)
-    //         .then(result => {
-    //             const user = result.user;
-    //         })
-    //         .catch(error => {
-    //             console.error(error)
-    //         })
-    // }
 
     //Google Login
     const googleHandler = () => {
@@ -82,14 +78,7 @@ const Register = () => {
                                     <input name='password' type="password" placeholder="Password" className="input input-bordered w-full rounded-xl" />
                                 </div>
 
-                                {/* Confirm Password */}
-                                <div className="form-control">
-                                    <label className="label">
-                                        <span className="label-text">Confirm Password</span>
-                                    </label>
-                                    <input name='confirm' type="password" placeholder="Confirm Password" className="input input-bordered rounded-xl" />
 
-                                </div>
                                 <div className="form-control mt-6">
                                     <button className="btn bg-blue-500 text-white border-none rounded-xl">Register</button>
                                     <p className='text-center text-slate-700 font-bold my-3'>or</p>

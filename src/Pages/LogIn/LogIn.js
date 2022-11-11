@@ -6,6 +6,9 @@ import useTitle from '../../Hooks/useTitle';
 const LogIn = () => {
     const { googleSignIn, passwordLogin } = useContext(AuthContext);
 
+
+
+
     const formHandler = (event) => {
         event.preventDefault();
         const form = event.target;
@@ -15,7 +18,7 @@ const LogIn = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
-                // form.reset();
+                form.reset();
             })
             .catch(error => console.error(error));
     }
