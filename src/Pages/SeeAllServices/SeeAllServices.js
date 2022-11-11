@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Service from '../Home/Services/Service/Service';
+import AllServiceDetails from './AllServiceDetails';
 
 const SeeAllServices = () => {
     const [data, setData] = useState([]);
@@ -16,13 +17,14 @@ const SeeAllServices = () => {
             .then(result => {
                 setLoading(false);
                 setData(result);
+                console.log(result)
             })
             .catch(error => console.log('error', error));
 
     }, [])
     return (
         <div>
-            <Service data={data} ></Service>
+            <AllServiceDetails data={data} ></AllServiceDetails>
         </div >
     );
 };

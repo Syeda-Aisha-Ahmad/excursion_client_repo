@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 const SingleService = ({ service }) => {
-    console.log(service)
     const { _id, price, name, image, description } = service;
     return (
         <div className='grid lg:grid-cols-3 grid-cols-1 w-fit mx-auto my-10 text-left' >
