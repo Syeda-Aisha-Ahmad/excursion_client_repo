@@ -1,31 +1,30 @@
 import React, { useEffect, useState } from 'react';
-import Service from '../Services/Services';
+import Service from '../Home/Services/Service/Service';
 
-const Services = () => {
+const SeeAllServices = () => {
     const [data, setData] = useState([]);
-    const [loading, setLoading] = useState(false);
-
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         var requestOptions = {
             method: 'GET',
             redirect: 'follow'
         };
-        setLoading(true);
+
         fetch("http://localhost:5000/allservices", requestOptions)
             .then(response => response.json())
             .then(result => {
                 setLoading(false);
-                setData(result.allServices);
+                setData(result);
             })
             .catch(error => console.log('error', error));
 
     }, [])
     return (
         <div>
-            <Service data={data} />
-        </div>
+            <Service data={data} ></Service>
+        </div >
     );
 };
 
-export default Services;
+export default SeeAllServices;
