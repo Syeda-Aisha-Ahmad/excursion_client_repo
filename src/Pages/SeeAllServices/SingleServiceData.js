@@ -27,7 +27,7 @@ const SingleServiceData = ({ data }) => {
 
                         <h4>Price: {price}</h4>
                         <div className="card-actions justify-end">
-                            <Link to={`services/${_id}`}><button className="btn bg-blue-400 border-none text-white rounded-2xl">View Details</button></Link>
+                            <Link to={`/servicesDetails/${_id}`}><button className="btn bg-blue-400 border-none text-white rounded-2xl">View Details</button></Link>
                         </div>
                     </div>
                 </div>

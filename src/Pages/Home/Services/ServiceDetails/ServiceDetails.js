@@ -3,7 +3,6 @@ import { useLoaderData } from 'react-router-dom';
 
 const ServiceDetails = () => {
     const serviceDetails = useLoaderData();
-    console.log(serviceDetails)
     const { _id, name, image, description, price } = serviceDetails;
     return (
         <div>
