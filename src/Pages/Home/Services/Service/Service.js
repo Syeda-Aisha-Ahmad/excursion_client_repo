@@ -6,8 +6,6 @@ import SingleService from '../SingleService/SingleService';
 const Service = ({ data }) => {
     console.log(data);
 
-    //Title
-    useTitle('Services')
     return (
         <div className='grid lg:grid-cols-3'>
 

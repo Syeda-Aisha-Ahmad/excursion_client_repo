@@ -20,7 +20,7 @@ const SingleServiceData = ({ data }) => {
                         <h2 className="card-title">{name}</h2>
                         {
                             description.length > 250 ?
-                                <p>{description.slice(0, 100) + '...'}<Link to={`services/${_id}`} className="text-blue-700">Read More</Link></p>
+                                <p>{description.slice(0, 100) + '...'}<Link to={`/servicesDetails/${_id}`} className="text-blue-700">Read More</Link></p>
                                 :
                                 <p>{description}</p>
                         }

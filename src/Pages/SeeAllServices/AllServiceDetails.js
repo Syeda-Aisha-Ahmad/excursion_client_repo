@@ -5,7 +5,7 @@ import SingleServiceData from './SingleServiceData';
 const AllServiceDetails = ({ data }) => {
     useTitle('AllServiceDetails')
     return (
-        <div>
+        <div className='grid lg:grid-cols-3'>
             {
                 data.map(dt => <SingleServiceData data={dt}></SingleServiceData>)
             }
