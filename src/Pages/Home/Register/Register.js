@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../Context/AuthProvider';
 import useTitle from '../../../Hooks/useTitle';
 
@@ -8,6 +8,8 @@ const Register = () => {
     const { googleSignIn, createUser, loading } = useContext(AuthContext)
     const [isLoading, setIsLoading] = useState(false)
     const [load, setLoad] = useState(false)
+
+
 
     //Register
     const registerForm = (event) => {

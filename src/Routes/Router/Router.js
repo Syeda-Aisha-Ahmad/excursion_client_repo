@@ -8,8 +8,8 @@ import ServiceDetails from "../../Pages/Home/Services/ServiceDetails/ServiceDeta
 import LogIn from "../../Pages/LogIn/LogIn";
 import MyReviews from "../../Pages/MyReviews/MyReviews";
 import SeeAllServices from "../../Pages/SeeAllServices/SeeAllServices";
-import Services from "../../Pages/Services/Services";
 import Main from "../Main/Main";
+import PrivateRoutes from "../PrivateRoute/PrivateRoutes";
 
 export const router = createBrowserRouter([
     {
@@ -40,7 +40,7 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/blog',
-                element: <Blog></Blog>
+                element: <PrivateRoutes><Blog></Blog></PrivateRoutes>
             },
             {
                 path: '/reviews',

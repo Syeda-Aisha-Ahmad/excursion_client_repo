@@ -1,8 +1,36 @@
-import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import React, { useContext } from 'react';
+import { Link, useLoaderData } from 'react-router-dom';
+import { AuthContext } from '../../../../Context/AuthProvider';
 import useTitle from '../../../../Hooks/useTitle';
 
 const ServiceDetails = () => {
+
+    const { user } = useContext(AuthContext);
+    // console.log(user)
+
+    const reviewHandler = (event) => {
+        event.preventDefault();
+        const form = event.target;
+        const userName = form.user.value;
+        const photoUrl = form.photourl.value;
+        const reviewText = form.review.value;
+
+        const reviewData = {
+            userName,
+            photoUrl,
+            reviewText
+        }
+        fetch('http://localhost:5000/allreviews', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(reviewData),
+        })
+            .then(res => res.json())
+            .then(data => console.log(data))
+            .catch(error => console.error(error))
+    }
 
     //Title
     useTitle('Details')
@@ -62,25 +90,46 @@ const ServiceDetails = () => {
                 <div>
                     <div className="collapse" >
                         <input type="checkbox" className="peer" />
-                        <button className="inline-block collapse-title bg-blue-500 text-white text-center peer-checked:bg-blue-600 peer-checked:text-white font-bold text-xl px-1 my-10 w-2/12 mx-auto rounded-xl">
-                            Add Review
-                        </button>
 
+                        {
+                            user?.uid ?
+                                <button className=" inline-block collapse-title bg-blue-500 text-white text-center peer-checked:bg-blue-600 peer-checked:text-white font-bold text-xl px-1 my-10 w-2/12 mx-auto rounded-xl">
+                                    Add Review
+                                </button>
+                                :
+                                <button className="inline-block collapse-title bg-blue-500 text-white text-center peer-checked:bg-blue-600 peer-checked:text-white font-bold text-xl px-1 my-10 w-2/12 mx-auto rounded-xl">
+                                    Add Review
+                                </button>
+                        }
 
+                        <div className='text-center'>
+                            {
+                                user?.uid ? < p className='hidden'>You have to Login to add reviews.. Please Login</p>
+                                    :
+                                    <p className='text-base'>You have to Login to add reviews.. Please <Link to={'/login'} className="text-blue-700 underline">Login</Link></p>
+                            }
 
-                        <div className="collapse-content bg-none text-primary-content peer-checked:bg-blue-100 peer-checked:text-secondary-content " >
-                            <form action="">
-                                <h3 className='text-3xl font-bold text-blue-900 my-10'>Your Review</h3>
-                                <input type="text" placeholder="Your name" className="input input-bordered w-1/2 rounded-xl mb-5" />
-                                <input type="text" placeholder="Your Email" className="input input-bordered w-1/2 rounded-xl mb-5" />
-                                <textarea className="textarea textarea-bordered w-full rounded-xl" placeholder="Review"></textarea>
-                                <button className='btn bg-blue-500 text-white border-none rounded-xl px-10'>Submit</button>
-                            </form>
                         </div>
+
+
+                        {
+                            user?.uid ?
+                                <div className=" collapse-content bg-none text-primary-content peer-checked:bg-blue-100 peer-checked:text-secondary-content " >
+                                    <form onSubmit={reviewHandler}>
+                                        <h3 className='text-3xl font-bold text-blue-900 my-10'>Your Review</h3>
+                                        <input name='user' type="text" placeholder="Your name" className="input input-bordered w-1/2 rounded-xl mb-5" />
+                                        <input name='photourl' type="text" placeholder="photo url" className="input input-bordered w-1/2 rounded-xl mb-5" />
+                                        <textarea name='review' placeholder="Review....." className="textarea textarea-bordered w-full rounded-xl"></textarea>
+                                        <button className='btn bg-blue-500 text-white border-none rounded-xl px-10'>Submit</button>
+                                    </form>
+                                </div>
+                                :
+                                <div className='hidden'></div>
+                        }
                     </div>
                 </div>
-            </section>
-        </div>
+            </section >
+        </div >
     );
 };
 
