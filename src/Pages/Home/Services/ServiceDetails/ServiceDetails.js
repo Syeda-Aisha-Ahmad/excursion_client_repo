@@ -20,7 +20,7 @@ const ServiceDetails = () => {
             photoUrl,
             reviewText
         }
-        fetch('http://localhost:5000/allreviews', {
+        fetch('https://assignment-server-11-nu.vercel.app/allreviews', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

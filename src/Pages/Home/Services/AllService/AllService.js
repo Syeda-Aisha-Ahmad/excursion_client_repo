@@ -14,7 +14,7 @@ const AllService = () => {
             redirect: 'follow'
         };
 
-        fetch("http://localhost:5000/3services", requestOptions)
+        fetch("https://assignment-server-11-nu.vercel.app/3services", requestOptions)
             .then(response => response.json())
             .then(result => {
                 setLoading(false);

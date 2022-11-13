@@ -12,7 +12,7 @@ const SeeAllServices = () => {
             redirect: 'follow'
         };
 
-        fetch("http://localhost:5000/allservices", requestOptions)
+        fetch("https://assignment-server-11-nu.vercel.app/allservices", requestOptions)
             .then(response => response.json())
             .then(result => {
                 setLoading(false);
