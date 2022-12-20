@@ -6,7 +6,7 @@ import SingleService from '../SingleService/SingleService';
 const Service = ({ data }) => {
 
     return (
-        <div className='grid lg:grid-cols-3'>
+        <div className='grid gap-5 lg:grid-cols-3 md:grid-cols-2 grid-cols-1'>
 
             {
                 data.map(service => (<SingleService service={service} />))

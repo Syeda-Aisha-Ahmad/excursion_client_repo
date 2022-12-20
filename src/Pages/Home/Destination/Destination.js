@@ -1,6 +1,4 @@
 import React from 'react';
-import img from '../../../Assets/Images/banner4.jpg'
-import bangladesh from '../../../Assets/Images/bangladesh.jpg_large'
 import './Destination.css'
 
 const Destination = () => {
@@ -21,8 +19,8 @@ const Destination = () => {
                         </div>
 
                         {/* Japan */}
-                        <div className='flex'>
-                            <div className="hero hero-style hero-style2" style={{ backgroundImage: `url("https://www.cosmeticsdesign-asia.com/var/wrbm_gb_food_pharma/storage/images/_aliases/wrbm_large/publications/cosmetics/cosmeticsdesign-asia.com/headlines/market-trends/japan-focus-top-stories-on-the-japanese-cosmetics-industry/10440600-1-eng-GB/Japan-focus-Top-stories-on-the-Japanese-cosmetics-industry.jpg")` }} data-aos="fade-right">
+                        <div className='lg:flex'>
+                            <div className="hero hero-style lg:hero-style2 w-full" style={{ backgroundImage: `url("https://www.cosmeticsdesign-asia.com/var/wrbm_gb_food_pharma/storage/images/_aliases/wrbm_large/publications/cosmetics/cosmeticsdesign-asia.com/headlines/market-trends/japan-focus-top-stories-on-the-japanese-cosmetics-industry/10440600-1-eng-GB/Japan-focus-Top-stories-on-the-Japanese-cosmetics-industry.jpg")` }} data-aos="fade-right">
                                 <div className="hero-overlay bg-opacity-20"></div>
                                 <div className="hero-content text-center text-white">
                                     <div className="max-w-md">
@@ -32,7 +30,7 @@ const Destination = () => {
                             </div>
 
                             {/* Australia */}
-                            <div className="hero hero-style hero-style2" style={{ backgroundImage: `url("http://cdn.cnn.com/cnnnext/dam/assets/191011110307-02-australia-beautiful-places.jpg")` }} data-aos="fade-left">
+                            <div className="hero hero-style lg:hero-style2" style={{ backgroundImage: `url("http://cdn.cnn.com/cnnnext/dam/assets/191011110307-02-australia-beautiful-places.jpg")` }} data-aos="fade-left">
                                 <div className="hero-overlay bg-opacity-30"></div>
                                 <div className="hero-content text-center text-white">
                                     <div className="max-w-md">
@@ -55,9 +53,9 @@ const Destination = () => {
                             </div>
                         </div>
 
-                        <div className='flex justify-between'>
+                        <div className='lg:flex justify-between'>
                             {/* Malaysia */}
-                            <div className="hero hero-style hero-style2" style={{ backgroundImage: `url("https://globalgrasshopper.com/wp-content/uploads/2014/05/Langkawi-1.jpg")` }} data-aos="fade-right">
+                            <div className="hero hero-style lg:hero-style2" style={{ backgroundImage: `url("https://globalgrasshopper.com/wp-content/uploads/2014/05/Langkawi-1.jpg")` }} data-aos="fade-right">
                                 <div className="hero-overlay bg-opacity-30"></div>
                                 <div className="hero-content text-center text-white">
                                     <div className="max-w-md">
@@ -67,7 +65,7 @@ const Destination = () => {
                             </div>
 
                             {/* Spain */}
-                            <div className="hero hero-style hero-style2" style={{ backgroundImage: `url("https://www.travelanddestinations.com/wp-content/uploads/2019/06/Seville-Places-to-visit-in-Spain.jpg")` }} data-aos="fade-left">
+                            <div className="hero hero-style lg:hero-style2 " style={{ backgroundImage: `url("https://www.travelanddestinations.com/wp-content/uploads/2019/06/Seville-Places-to-visit-in-Spain.jpg")` }} data-aos="fade-left">
                                 <div className="hero-overlay bg-opacity-30"></div>
                                 <div className="hero-content text-center text-white">
                                     <div className="max-w-md">

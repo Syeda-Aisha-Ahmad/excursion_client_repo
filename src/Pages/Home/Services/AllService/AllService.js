@@ -24,7 +24,7 @@ const AllService = () => {
 
     }, [])
     return (
-        <div className='mt-32 text-center grid lg:grid-cl' data-aos="fade-up">
+        <div className='w-10/12 mx-auto mt-32 text-center' data-aos="fade-up">
             <h1 className='text-4xl text-black'>Our <span className='text-blue-500'>Services</span></h1>
             {loading ? <div class="text-center">
                 <div role="status">
@@ -36,7 +36,7 @@ const AllService = () => {
                 </div>
             </div> : (<Service data={data} />)}
 
-            <div className='mb-28'>
+            <div className='mb-28 '>
                 <Link to="/services">
                     <button className="btn btn-ghost text-base text-black">See All<FaArrowRight className='ml-2 text-base' /></button>
                 </Link>

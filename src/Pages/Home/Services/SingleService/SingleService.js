@@ -4,8 +4,8 @@ import { PhotoProvider, PhotoView } from 'react-photo-view';
 const SingleService = ({ service }) => {
     const { _id, price, name, image, description } = service;
     return (
-        <div className='grid lg:grid-cols-3 grid-cols-1 w-fit mx-auto my-10 text-left' >
-            <div className="card w-96 bg-base-100 shadow-xl mx-5">
+        <div className='grid my-10 text-left' >
+            <div className="card bg-base-100 shadow-xl">
                 <figure>
 
                     <PhotoProvider>

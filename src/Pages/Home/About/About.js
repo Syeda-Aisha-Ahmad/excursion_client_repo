@@ -3,9 +3,9 @@ import aboutImg from '../../../Assets/Images/about.jpg'
 
 const About = () => {
     return (
-        <div>
-            <div className="hero min-h-screen mb-10 bg-white" data-aos="fade-up">
-                <div className="hero-content flex-col lg:flex-row-reverse">
+        <div className='w-10/12 mx-auto'>
+            <div className="hero mb-10 bg-white" data-aos="fade-up">
+                <div className="hero-content flex-col lg:flex-row-reverse px-0">
                     <div className='w-1/2 mx-auto'>
                         <img alt='' src={aboutImg} className=" rounded-lg shadow-2xl" />
                     </div>
